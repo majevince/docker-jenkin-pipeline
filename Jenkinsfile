@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image
-                    sh "sudo docker build -t test-nginx ${env.IMAGE_NAME}:${env.IMAGE_TAG} ."
+                    sh "sudo docker build -t  ${env.IMAGE_NAME}:${env.IMAGE_TAG} ."
                 }
             }
         }
