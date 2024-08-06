@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     // Push the Docker image to Docker Hub
-                    sh "sudo  docker tag majevince/${env.IMAGE_NAME}:${env.IMAGE_TAG}"
+                    sh "sudo  docker tag ${env.IMAGE_NAME}:${env.IMAGE_TAG}  majevince/${env.IMAGE_NAME}:${env.IMAGE_TAG}"
                     sh "sudo  docker push ${env.IMAGE_NAME}:${env.IMAGE_TAG}"
                 }
             }
