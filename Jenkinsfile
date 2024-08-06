@@ -33,7 +33,7 @@ pipeline {
             }
         }
 
-        stage('Push Docker Image') {
+        stage('sudo ush Docker Image') {
             steps {
                 script {
                     // Push the Docker image to Docker Hub
@@ -47,7 +47,7 @@ pipeline {
         always {
             script {
                 // Clean up Docker images to free up space
-                sh ' docker image prune -af'
+                sh 'sudo  docker image prune -af'
             }
         }
     }
