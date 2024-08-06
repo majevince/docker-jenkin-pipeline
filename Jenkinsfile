@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER-HUB-CREDENTIALS = credentials('docker-hub-credentials')
+        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials')
         IMAGE_NAME = 'nginx'
         IMAGE_TAG = 'latest'
     }
