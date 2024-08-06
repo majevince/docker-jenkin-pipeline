@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image
-                    sh "sudo  docker build -t  ${env.IMAGE_NAME}:${env.IMAGE_TAG} ."
+                    sh "docker build -t  ${env.IMAGE_NAME}:${env.IMAGE_TAG} ."
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     // Login to Docker Hub
-                    sh "sudo echo ${env.DOCKER_HUB_CREDENTIALS_PSW} | docker login -u ${env.DOCKER_HUB_CREDENTIALS_USR} --password-stdin"
+                    sh " echo ${env.DOCKER_HUB_CREDENTIALS_PSW} | docker login -u ${env.DOCKER_HUB_CREDENTIALS_USR} --password-stdin"
                 }
             }
         }
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     // Push the Docker image to Docker Hub
-                    sh "sudo docker push ${env.IMAGE_NAME}:${env.IMAGE_TAG}"
+                    sh " docker push ${env.IMAGE_NAME}:${env.IMAGE_TAG}"
                 }
             }
         }
@@ -47,7 +47,7 @@ pipeline {
         always {
             script {
                 // Clean up Docker images to free up space
-                sh 'sudo docker image prune -af'
+                sh ' docker image prune -af'
             }
         }
     }
