@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials')
         IMAGE_NAME = 'nginx'
-        IMAGE_TAG = 'latest'
+        IMAGE_TAG = '3.7'
     }
 
     stages {
